@@ -3,6 +3,7 @@
   Ви хочете створити об'єкт RoleDescription, який зіставлятиме кожну роль користувача з її описом.
 */
 
+
 export enum UserRole {
   admin = 'admin',
   editor = 'editor',
@@ -10,10 +11,12 @@ export enum UserRole {
 }
 
 // Замініть наступний код на версію за допомогою Record
-const RoleDescription = {
-  admin: 'Admin User',
-  editor: 'Editor User',
-  guest: 'Guest User',
+type UserRolesStatuses = Record<UserRole, string>;
+const RoleDescription: UserRolesStatuses = {
+  [UserRole.admin]: 'Admin User',
+  [UserRole.editor]: 'Editor User',
+  [UserRole.guest]: 'Guest User',
 };
 
 export {};
+
